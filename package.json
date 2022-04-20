@@ -1,12 +1,11 @@
 {
   "name": "nodejs-project-template",
   "version": "1.0.0",
-  "type": "module",
   "description": "",
   "main": "./src/index.ts",
   "scripts": {
     "build:dev": "rimraf dist && tsc",
-    "build:prod": "prisma migrate deploy && prisma generate && rimraf dist && tsc",
+    "build": "prisma migrate deploy && prisma generate && rimraf dist && tsc",
     "start": "node dist/index.js",
     "dev": "ts-node-dev --respawn --transpile-only --exit-child --ignore-watch node_modules src/index.ts",
     "prisma:reset": "prisma migrate reset",
