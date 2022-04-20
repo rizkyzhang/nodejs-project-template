@@ -1,0 +1,50 @@
+{
+  "name": "nodejs-project-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.ts",
+  "scripts": {
+    "build:dev": "rimraf dist && tsc",
+    "build": "prisma migrate deploy && prisma generate && rimraf dist && tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only --exit-child --ignore-watch node_modules src/index.ts",
+    "prisma:reset": "prisma migrate reset",
+    "prisma:init": "prisma migrate dev --create-only --name init",
+    "prisma:create": "prisma migrate dev --create-only",
+    "prisma:migrate": "prisma migrate dev",
+    "prisma:generate": "prisma generate",
+    "prisma:studio": "prisma studio",
+    "prisma:format": "prisma format",
+    "prisma:seed": "prisma db seed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-personal:rizkyzhang/nodejs-project-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^3.11.1",
+    "@supabase/supabase-js": "^1.32.2",
+    "axios": "^0.26.1",
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "helmet": "^5.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/morgan": "^1.9.3",
+    "prisma": "^3.11.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.3"
+  }
+}
