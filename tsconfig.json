@@ -1,15 +1,23 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "allowJs": true,
+    "baseUrl": ".",
     "esModuleInterop": true,
-    "moduleResolution": "node",
     "forceConsistentCasingInFileNames": true,
-    "strict": true,
+    "lib": ["esnext", "dom"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "paths": {
+      "@src/*": ["./src/*"]
+    },
+    "removeComments": true,
+    "rootDir": ".",
     "skipLibCheck": true,
-    "baseUrl": "src",
-    "outDir": "dist"
+    "strict": true,
+    "target": "es5"
   },
   "include": ["src"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", "dist"]
 }
