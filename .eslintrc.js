@@ -2,13 +2,13 @@ module.exports = {
   env: {
     es2021: true,
     node: true,
-    // jest: true,
+    jest: true,
   },
   extends: [
     "airbnb-base",
     "airbnb-typescript/base",
     "plugin:@typescript-eslint/recommended",
-    // "plugin:jest/recommended",
+    "plugin:jest/recommended",
     "plugin:promise/recommended",
     "prettier",
   ],
@@ -16,13 +16,7 @@ module.exports = {
   parserOptions: {
     project: "./tsconfig.json",
   },
-  plugins: [
-    "@typescript-eslint",
-    // "jest",
-    "promise",
-    "import",
-    "prettier",
-  ],
+  plugins: ["@typescript-eslint", "jest", "promise", "import", "prettier"],
   rules: {
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/no-use-before-define": [
