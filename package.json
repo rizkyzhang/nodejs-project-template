@@ -6,7 +6,7 @@
   "scripts": {
     "build:dev": "rimraf dist && tsc",
     "build": "prisma migrate deploy && prisma generate && rimraf dist && tsc",
-    "start": "node dist/src/index.js",
+    "start": "node -r ts-node/register/transpile-only -r tsconfig-paths/register dist/src/index.js",
     "dev": "nodemon --watch *.ts --exec ts-node -r tsconfig-paths/register ./src/index.ts",
     "test": "jest",
     "test:watch": "jest --watch",
