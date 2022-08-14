@@ -3,6 +3,8 @@ import cors from "cors"
 import helmet from "helmet"
 import morgan from "morgan"
 
+import root from "@/src/routes/root"
+
 const app = express()
 const port = process.env.PORT || 5000
 
@@ -12,14 +14,10 @@ app.use(helmet())
 app.use(morgan("short"))
 
 app.get("/", (req, res) => {
-  res.redirect("/api")
+  res.redirect("/api/v1")
 })
 
-app.get("/api", (req, res) => {
-  res.json({
-    message: "Welcome to starter API",
-  })
-})
+app.use("/api/v1", root)
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
