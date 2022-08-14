@@ -28,6 +28,7 @@ module.exports = {
         typedefs: true,
       },
     ],
+    "consistent-return": "off",
     "import/no-default-export": "off",
     "import/no-extraneous-dependencies": "off",
     "import/prefer-default-export": "off",
